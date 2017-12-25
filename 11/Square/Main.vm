@@ -1,0 +1,19 @@
+function Main.main 1
+//Let(name=game, index=null, value=Expr(first=Call(what=SubCall(owner=SquareGame, subName=new, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=SquareGame, subName=new, args=[])), rest=[])
+//Call(what=SubCall(owner=SquareGame, subName=new, args=[]))
+call SquareGame.new 0
+pop local 0
+//Do(value=SubCall(owner=game, subName=run, args=[]))
+//Call(what=SubCall(owner=game, subName=run, args=[]))
+push local 0
+call SquareGame.run 1
+pop temp 0
+//Do(value=SubCall(owner=game, subName=dispose, args=[]))
+//Call(what=SubCall(owner=game, subName=dispose, args=[]))
+push local 0
+call SquareGame.dispose 1
+pop temp 0
+//Return(value=null)
+push constant 0
+return

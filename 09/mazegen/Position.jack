@@ -1,0 +1,16 @@
+class Position {
+  field int x,y;
+  constructor Position new(int x_,int y_) {
+    let x = x_;
+    let y = y_;
+    return this;
+  }
+  method int getX() { return x; }
+  method int getY() { return y; }
+  method void setX(int val) { let x = val; return;}
+  method void setY(int val) { let y = val; return;}
+  method Position left() {return Position.new(x-1,y);}
+  method Position right() {return Position.new(x+1,y);}
+  method Position up() {return Position.new(x,y-1);}
+  method Position down() {return Position.new(x,y+1);}
+}

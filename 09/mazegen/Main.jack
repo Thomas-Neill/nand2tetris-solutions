@@ -1,0 +1,95 @@
+class Main {
+  function void main() {
+    var Matrix mat;
+    var Stack posStack;
+    var Position pos;
+    var RNG rng;
+    var Array dirs;
+    var int x,y,remaining,n,dir,maze_size;
+
+    let maze_size = 30;
+
+    let rng = RNG.new(Keyboard.readInt("RNG seed: "));
+    let mat = Matrix.new(maze_size,maze_size);
+    let pos = Position.new(0,0);
+    let posStack = Stack.new(maze_size * maze_size);
+    let dirs = Array.new(5);
+    let remaining = (maze_size*maze_size) - 1;
+
+    do Screen.clearScreen();
+    let y = 0;
+    while(y < maze_size) {
+      let x = 0;
+      while(x < maze_size) {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(4*x,4*y,(4*x) + 3,(4*y) + 3);
+        do Screen.setColor(false);
+        do Screen.drawRectangle((4*x)+1,(4*y)+1,(4*x)+2,(4*y)+2);
+        do mat.set(x,y,false);
+        let x = x + 1;
+      }
+      let y = y + 1;
+    }
+
+    while(true) {
+      let n = 0;
+      let x = pos.getX();
+      let y = pos.getY();
+      do mat.set(x,y,true);
+      if(~(x = 0)) {
+        if(~mat.get(x-1,y)) {
+          let n = n + 1;
+          let dirs[n] = 1;
+        }
+      }
+      if(~(y = 0)) {
+        if(~mat.get(x,y-1)) {
+          let n = n + 1;
+          let dirs[n] = 2;
+        }
+      }
+      if(~(x = (maze_size - 1))) {
+        if(~mat.get(x+1,y)) {
+          let n = n + 1;
+          let dirs[n] = 3;
+        }
+      }
+      if(~(y = (maze_size - 1))) {
+        if(~mat.get(x,y+1)) {
+          let n = n + 1;
+          let dirs[n] = 4;
+        }
+      }
+      if(n = 0) {
+        if((x = 0)&(y=0)) {
+          return;
+        }
+        let pos = posStack.pop();
+      }
+      if(~(n = 0)) {
+        let dir = dirs[rng.randInt(0,n)];
+        do Screen.setColor(false);
+        do posStack.push(pos);
+        if(dir = 1) {
+          do Screen.drawRectangle((4*x)-1,(4*y)+1,(4*x),(4*y)+2);
+          let pos = pos.left();
+        }
+        if(dir = 2) {
+          do Screen.drawRectangle((4*x)+1,(4*y)-1,(4*x)+2,(4*y));
+          let pos = pos.up();
+        }
+        if(dir = 3) {
+          do Screen.drawRectangle((4*x)+3,(4*y)+1,(4*x)+4,(4*y)+2);
+          let pos = pos.right();
+        }
+        if(dir = 4) {
+          do Screen.drawRectangle((4*x)+1,(4*y)+3,(4*x)+2,(4*y)+4);
+          let pos = pos.down();
+        }
+        do Sys.wait(10);
+      }
+    }
+
+    return;
+  }
+}

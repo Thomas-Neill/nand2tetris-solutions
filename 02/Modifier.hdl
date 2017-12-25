@@ -1,0 +1,11 @@
+CHIP Modifier {
+  IN
+    in[16],negate,zero;
+  OUT
+    out[16];
+  PARTS:
+    Mux16(a=in,b[0..15]=false,sel=zero,out=ina);
+
+    Not16(in=ina,out=notina);
+    Mux16(a=ina,b=notina,sel=negate,out=out);
+}

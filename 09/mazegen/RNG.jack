@@ -1,0 +1,17 @@
+class RNG {
+  field int state;
+  constructor RNG new(int seed) {
+    let state = seed;
+    return this;
+  }
+  method int random() {
+    let state = (state*8121) + 11;
+    return state;
+  }
+  method int randInt(int min,int max) {
+    var int rand;
+    let rand = Math.abs(random());
+    return min + rand - ((max - min + 1)*(rand/(max - min + 1)));
+  }
+
+}

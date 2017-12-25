@@ -1,0 +1,581 @@
+function Square.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+//Let(name=x, index=null, value=Expr(first=Var(name=Ax), rest=[]))
+//Expr(first=Var(name=Ax), rest=[])
+//Var(name=Ax)
+push argument 0
+pop this 0
+//Let(name=y, index=null, value=Expr(first=Var(name=Ay), rest=[]))
+//Expr(first=Var(name=Ay), rest=[])
+//Var(name=Ay)
+push argument 1
+pop this 1
+//Let(name=size, index=null, value=Expr(first=Var(name=Asize), rest=[]))
+//Expr(first=Var(name=Asize), rest=[])
+//Var(name=Asize)
+push argument 2
+pop this 2
+//Do(value=SubCall(owner=null, subName=draw, args=[]))
+//Call(what=SubCall(owner=null, subName=draw, args=[]))
+push pointer 0
+call Square.draw 1
+pop temp 0
+//Return(value=Expr(first=Term$THIS@4d76f3f8, rest=[]))
+//Expr(first=Term$THIS@4d76f3f8, rest=[])
+//Term$THIS@4d76f3f8
+push pointer 0
+return
+function Square.dispose 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=Memory, subName=deAlloc, args=[Expr(first=Term$THIS@4d76f3f8, rest=[])]))
+//Call(what=SubCall(owner=Memory, subName=deAlloc, args=[Expr(first=Term$THIS@4d76f3f8, rest=[])]))
+//Expr(first=Term$THIS@4d76f3f8, rest=[])
+//Term$THIS@4d76f3f8
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function Square.draw 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Expr(first=Term$TRUE@3fa77460, rest=[])
+//Term$TRUE@3fa77460
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function Square.erase 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Expr(first=Term$FALSE@23ab930d, rest=[])
+//Term$FALSE@23ab930d
+push constant 0
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function Square.incSize 0
+push argument 0
+pop pointer 0
+//If(cond=Expr(first=Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=254))])), rest=[(Expr$AND@497470ed, Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=510))])))]), body=[Do(value=SubCall(owner=null, subName=erase, args=[])), Let(name=size, index=null, value=Expr(first=Var(name=size), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))])), Do(value=SubCall(owner=null, subName=draw, args=[]))], els=null)
+//Expr(first=Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=254))])), rest=[(Expr$AND@497470ed, Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=510))])))])
+//Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=254))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=254))])
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=254)
+push constant 254
+lt
+//Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=510))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=510))])
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=510)
+push constant 510
+lt
+and
+if-goto TRUE0
+goto DONE0
+label TRUE0
+//Do(value=SubCall(owner=null, subName=erase, args=[]))
+//Call(what=SubCall(owner=null, subName=erase, args=[]))
+push pointer 0
+call Square.erase 1
+pop temp 0
+//Let(name=size, index=null, value=Expr(first=Var(name=size), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))]))
+//Expr(first=Var(name=size), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))])
+//Var(name=size)
+push this 2
+//IntConstant(value=2)
+push constant 2
+add
+pop this 2
+//Do(value=SubCall(owner=null, subName=draw, args=[]))
+//Call(what=SubCall(owner=null, subName=draw, args=[]))
+push pointer 0
+call Square.draw 1
+pop temp 0
+label DONE0
+//Return(value=null)
+push constant 0
+return
+function Square.decSize 0
+push argument 0
+pop pointer 0
+//If(cond=Expr(first=Var(name=size), rest=[(Expr$GT@63c12fb0, IntConstant(value=2))]), body=[Do(value=SubCall(owner=null, subName=erase, args=[])), Let(name=size, index=null, value=Expr(first=Var(name=size), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))])), Do(value=SubCall(owner=null, subName=draw, args=[]))], els=null)
+//Expr(first=Var(name=size), rest=[(Expr$GT@63c12fb0, IntConstant(value=2))])
+//Var(name=size)
+push this 2
+//IntConstant(value=2)
+push constant 2
+gt
+if-goto TRUE1
+goto DONE1
+label TRUE1
+//Do(value=SubCall(owner=null, subName=erase, args=[]))
+//Call(what=SubCall(owner=null, subName=erase, args=[]))
+push pointer 0
+call Square.erase 1
+pop temp 0
+//Let(name=size, index=null, value=Expr(first=Var(name=size), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))]))
+//Expr(first=Var(name=size), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))])
+//Var(name=size)
+push this 2
+//IntConstant(value=2)
+push constant 2
+sub
+pop this 2
+//Do(value=SubCall(owner=null, subName=draw, args=[]))
+//Call(what=SubCall(owner=null, subName=draw, args=[]))
+push pointer 0
+call Square.draw 1
+pop temp 0
+label DONE1
+//Return(value=null)
+push constant 0
+return
+function Square.moveUp 0
+push argument 0
+pop pointer 0
+//If(cond=Expr(first=Var(name=y), rest=[(Expr$GT@63c12fb0, IntConstant(value=1))]), body=[Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])])), Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))])), Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])]))], els=null)
+//Expr(first=Var(name=y), rest=[(Expr$GT@63c12fb0, IntConstant(value=1))])
+//Var(name=y)
+push this 1
+//IntConstant(value=1)
+push constant 1
+gt
+if-goto TRUE2
+goto DONE2
+label TRUE2
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Expr(first=Term$FALSE@23ab930d, rest=[])
+//Term$FALSE@23ab930d
+push constant 0
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))])
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=1)
+push constant 1
+sub
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+//Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))]))
+//Expr(first=Var(name=y), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))])
+//Var(name=y)
+push this 1
+//IntConstant(value=2)
+push constant 2
+sub
+pop this 1
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Expr(first=Term$TRUE@3fa77460, rest=[])
+//Term$TRUE@3fa77460
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])
+//Var(name=y)
+push this 1
+//IntConstant(value=1)
+push constant 1
+add
+call Screen.drawRectangle 4
+pop temp 0
+label DONE2
+//Return(value=null)
+push constant 0
+return
+function Square.moveDown 0
+push argument 0
+pop pointer 0
+//If(cond=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=254))]), body=[Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])])), Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))])), Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))], els=null)
+//Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=254))])
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=254)
+push constant 254
+lt
+if-goto TRUE3
+goto DONE3
+label TRUE3
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Expr(first=Term$FALSE@23ab930d, rest=[])
+//Term$FALSE@23ab930d
+push constant 0
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])
+//Var(name=y)
+push this 1
+//IntConstant(value=1)
+push constant 1
+add
+call Screen.drawRectangle 4
+pop temp 0
+//Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))])
+//Var(name=y)
+push this 1
+//IntConstant(value=2)
+push constant 2
+add
+pop this 1
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Expr(first=Term$TRUE@3fa77460, rest=[])
+//Term$TRUE@3fa77460
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))])
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=1)
+push constant 1
+sub
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+label DONE3
+//Return(value=null)
+push constant 0
+return
+function Square.moveLeft 0
+push argument 0
+pop pointer 0
+//If(cond=Expr(first=Var(name=x), rest=[(Expr$GT@63c12fb0, IntConstant(value=1))]), body=[Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])])), Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))])), Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))], els=null)
+//Expr(first=Var(name=x), rest=[(Expr$GT@63c12fb0, IntConstant(value=1))])
+//Var(name=x)
+push this 0
+//IntConstant(value=1)
+push constant 1
+gt
+if-goto TRUE4
+goto DONE4
+label TRUE4
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Expr(first=Term$FALSE@23ab930d, rest=[])
+//Term$FALSE@23ab930d
+push constant 0
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))])
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=1)
+push constant 1
+sub
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+//Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))]))
+//Expr(first=Var(name=x), rest=[(Expr$SUB@b1a58a3, IntConstant(value=2))])
+//Var(name=x)
+push this 0
+//IntConstant(value=2)
+push constant 2
+sub
+pop this 0
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Expr(first=Term$TRUE@3fa77460, rest=[])
+//Term$TRUE@3fa77460
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])
+//Var(name=x)
+push this 0
+//IntConstant(value=1)
+push constant 1
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+label DONE4
+//Return(value=null)
+push constant 0
+return
+function Square.moveRight 0
+push argument 0
+pop pointer 0
+//If(cond=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=510))]), body=[Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])])), Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))])), Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])])), Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))], els=null)
+//Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$LT@7ab2bfe1, IntConstant(value=510))])
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=510)
+push constant 510
+lt
+if-goto TRUE5
+goto DONE5
+label TRUE5
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@23ab930d, rest=[])]))
+//Expr(first=Term$FALSE@23ab930d, rest=[])
+//Term$FALSE@23ab930d
+push constant 0
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=1))])
+//Var(name=x)
+push this 0
+//IntConstant(value=1)
+push constant 1
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+//Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, IntConstant(value=2))])
+//Var(name=x)
+push this 0
+//IntConstant(value=2)
+push constant 2
+add
+pop this 0
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@3fa77460, rest=[])]))
+//Expr(first=Term$TRUE@3fa77460, rest=[])
+//Term$TRUE@3fa77460
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]), Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])]))
+//Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])), rest=[(Expr$SUB@b1a58a3, IntConstant(value=1))])
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//IntConstant(value=1)
+push constant 1
+sub
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=x)
+push this 0
+//Var(name=size)
+push this 2
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@7e32c033, Var(name=size))])
+//Var(name=y)
+push this 1
+//Var(name=size)
+push this 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+label DONE5
+//Return(value=null)
+push constant 0
+return

@@ -1,0 +1,17 @@
+class Matrix {
+  field Array internal;
+  field int w,h;
+  constructor Matrix new(int w_,int h_) {
+    let internal = Array.new(w_*h_);
+    let w = w_;
+    let h = h_;
+    return this;
+  }
+  method int get(int x,int y) {
+    return internal[(y*h) + x];
+  }
+  method void set(int x,int y,int val) {
+    let internal[(y*h) + x] = val;
+    return;
+  }
+}

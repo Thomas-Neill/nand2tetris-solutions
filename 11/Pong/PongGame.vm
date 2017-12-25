@@ -1,0 +1,586 @@
+function PongGame.new 0
+push constant 7
+call Memory.alloc 1
+pop pointer 0
+//Do(value=SubCall(owner=Screen, subName=clearScreen, args=[]))
+//Call(what=SubCall(owner=Screen, subName=clearScreen, args=[]))
+call Screen.clearScreen 0
+pop temp 0
+//Let(name=batWidth, index=null, value=Expr(first=IntConstant(value=50), rest=[]))
+//Expr(first=IntConstant(value=50), rest=[])
+//IntConstant(value=50)
+push constant 50
+pop this 6
+//Let(name=bat, index=null, value=Expr(first=Call(what=SubCall(owner=Bat, subName=new, args=[Expr(first=IntConstant(value=230), rest=[]), Expr(first=IntConstant(value=229), rest=[]), Expr(first=Var(name=batWidth), rest=[]), Expr(first=IntConstant(value=7), rest=[])])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=Bat, subName=new, args=[Expr(first=IntConstant(value=230), rest=[]), Expr(first=IntConstant(value=229), rest=[]), Expr(first=Var(name=batWidth), rest=[]), Expr(first=IntConstant(value=7), rest=[])])), rest=[])
+//Call(what=SubCall(owner=Bat, subName=new, args=[Expr(first=IntConstant(value=230), rest=[]), Expr(first=IntConstant(value=229), rest=[]), Expr(first=Var(name=batWidth), rest=[]), Expr(first=IntConstant(value=7), rest=[])]))
+//Expr(first=IntConstant(value=230), rest=[])
+//IntConstant(value=230)
+push constant 230
+//Expr(first=IntConstant(value=229), rest=[])
+//IntConstant(value=229)
+push constant 229
+//Expr(first=Var(name=batWidth), rest=[])
+//Var(name=batWidth)
+push this 6
+//Expr(first=IntConstant(value=7), rest=[])
+//IntConstant(value=7)
+push constant 7
+call Bat.new 4
+pop this 0
+//Let(name=ball, index=null, value=Expr(first=Call(what=SubCall(owner=Ball, subName=new, args=[Expr(first=IntConstant(value=253), rest=[]), Expr(first=IntConstant(value=222), rest=[]), Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=511), rest=[]), Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=229), rest=[])])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=Ball, subName=new, args=[Expr(first=IntConstant(value=253), rest=[]), Expr(first=IntConstant(value=222), rest=[]), Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=511), rest=[]), Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=229), rest=[])])), rest=[])
+//Call(what=SubCall(owner=Ball, subName=new, args=[Expr(first=IntConstant(value=253), rest=[]), Expr(first=IntConstant(value=222), rest=[]), Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=511), rest=[]), Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=229), rest=[])]))
+//Expr(first=IntConstant(value=253), rest=[])
+//IntConstant(value=253)
+push constant 253
+//Expr(first=IntConstant(value=222), rest=[])
+//IntConstant(value=222)
+push constant 222
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+//Expr(first=IntConstant(value=511), rest=[])
+//IntConstant(value=511)
+push constant 511
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+//Expr(first=IntConstant(value=229), rest=[])
+//IntConstant(value=229)
+push constant 229
+call Ball.new 6
+pop this 1
+//Do(value=SubCall(owner=ball, subName=setDestination, args=[Expr(first=IntConstant(value=400), rest=[]), Expr(first=IntConstant(value=0), rest=[])]))
+//Call(what=SubCall(owner=ball, subName=setDestination, args=[Expr(first=IntConstant(value=400), rest=[]), Expr(first=IntConstant(value=0), rest=[])]))
+push this 1
+//Expr(first=IntConstant(value=400), rest=[])
+//IntConstant(value=400)
+push constant 400
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+call Ball.setDestination 3
+pop temp 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=238), rest=[]), Expr(first=IntConstant(value=511), rest=[]), Expr(first=IntConstant(value=240), rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=IntConstant(value=0), rest=[]), Expr(first=IntConstant(value=238), rest=[]), Expr(first=IntConstant(value=511), rest=[]), Expr(first=IntConstant(value=240), rest=[])]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+//Expr(first=IntConstant(value=238), rest=[])
+//IntConstant(value=238)
+push constant 238
+//Expr(first=IntConstant(value=511), rest=[])
+//IntConstant(value=511)
+push constant 511
+//Expr(first=IntConstant(value=240), rest=[])
+//IntConstant(value=240)
+push constant 240
+call Screen.drawRectangle 4
+pop temp 0
+//Do(value=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=22), rest=[]), Expr(first=IntConstant(value=0), rest=[])]))
+//Call(what=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=22), rest=[]), Expr(first=IntConstant(value=0), rest=[])]))
+//Expr(first=IntConstant(value=22), rest=[])
+//IntConstant(value=22)
+push constant 22
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+//Do(value=SubCall(owner=Output, subName=printString, args=[Expr(first=StrConstant(value=Score: 0), rest=[])]))
+//Call(what=SubCall(owner=Output, subName=printString, args=[Expr(first=StrConstant(value=Score: 0), rest=[])]))
+//Expr(first=StrConstant(value=Score: 0), rest=[])
+//StrConstant(value=Score: 0)
+push constant 8
+call String.new 1
+push constant 83
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+//Let(name=exit, index=null, value=Expr(first=Term$FALSE@4534b60d, rest=[]))
+//Expr(first=Term$FALSE@4534b60d, rest=[])
+//Term$FALSE@4534b60d
+push constant 0
+pop this 3
+//Let(name=score, index=null, value=Expr(first=IntConstant(value=0), rest=[]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+pop this 4
+//Let(name=wall, index=null, value=Expr(first=IntConstant(value=0), rest=[]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+pop this 2
+//Let(name=lastWall, index=null, value=Expr(first=IntConstant(value=0), rest=[]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+pop this 5
+//Return(value=Expr(first=Term$THIS@2d8e6db6, rest=[]))
+//Expr(first=Term$THIS@2d8e6db6, rest=[])
+//Term$THIS@2d8e6db6
+push pointer 0
+return
+function PongGame.dispose 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=bat, subName=dispose, args=[]))
+//Call(what=SubCall(owner=bat, subName=dispose, args=[]))
+push this 0
+call Bat.dispose 1
+pop temp 0
+//Do(value=SubCall(owner=ball, subName=dispose, args=[]))
+//Call(what=SubCall(owner=ball, subName=dispose, args=[]))
+push this 1
+call Ball.dispose 1
+pop temp 0
+//Do(value=SubCall(owner=Memory, subName=deAlloc, args=[Expr(first=Term$THIS@2d8e6db6, rest=[])]))
+//Call(what=SubCall(owner=Memory, subName=deAlloc, args=[Expr(first=Term$THIS@2d8e6db6, rest=[])]))
+//Expr(first=Term$THIS@2d8e6db6, rest=[])
+//Term$THIS@2d8e6db6
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function PongGame.newInstance 0
+//Let(name=instance, index=null, value=Expr(first=Call(what=SubCall(owner=PongGame, subName=new, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=PongGame, subName=new, args=[])), rest=[])
+//Call(what=SubCall(owner=PongGame, subName=new, args=[]))
+call PongGame.new 0
+pop static 0
+//Return(value=null)
+push constant 0
+return
+function PongGame.getInstance 0
+//Return(value=Expr(first=Var(name=instance), rest=[]))
+//Expr(first=Var(name=instance), rest=[])
+//Var(name=instance)
+push static 0
+return
+function PongGame.run 1
+push argument 0
+pop pointer 0
+//While(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[]), body=[While(cond=Expr(first=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])))]), body=[Let(name=key, index=null, value=Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[])), Do(value=SubCall(owner=bat, subName=move, args=[])), Do(value=SubCall(owner=null, subName=moveBall, args=[])), Do(value=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))]), If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=130))]), body=[Do(value=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=1), rest=[])]))], els=[If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=132))]), body=[Do(value=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=2), rest=[])]))], els=[If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=140))]), body=[Let(name=exit, index=null, value=Expr(first=Term$TRUE@23ab930d, rest=[]))], els=null)])]), While(cond=Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])))]), body=[Let(name=key, index=null, value=Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[])), Do(value=SubCall(owner=bat, subName=move, args=[])), Do(value=SubCall(owner=null, subName=moveBall, args=[])), Do(value=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))])])
+label WHILE0
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Var(name=exit))
+//Var(name=exit)
+push this 3
+not
+not
+if-goto DONE0
+//While(cond=Expr(first=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])))]), body=[Let(name=key, index=null, value=Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[])), Do(value=SubCall(owner=bat, subName=move, args=[])), Do(value=SubCall(owner=null, subName=moveBall, args=[])), Do(value=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))])
+label WHILE1
+//Expr(first=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])))])
+//Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]))
+//Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))])
+//Var(name=key)
+push local 0
+//IntConstant(value=0)
+push constant 0
+eq
+//Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[]))
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Var(name=exit))
+//Var(name=exit)
+push this 3
+not
+and
+not
+if-goto DONE1
+//Let(name=key, index=null, value=Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[])
+//Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[]))
+call Keyboard.keyPressed 0
+pop local 0
+//Do(value=SubCall(owner=bat, subName=move, args=[]))
+//Call(what=SubCall(owner=bat, subName=move, args=[]))
+push this 0
+call Bat.move 1
+pop temp 0
+//Do(value=SubCall(owner=null, subName=moveBall, args=[]))
+//Call(what=SubCall(owner=null, subName=moveBall, args=[]))
+push pointer 0
+call PongGame.moveBall 1
+pop temp 0
+//Do(value=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))
+//Call(what=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))
+//Expr(first=IntConstant(value=50), rest=[])
+//IntConstant(value=50)
+push constant 50
+call Sys.wait 1
+pop temp 0
+goto WHILE1
+label DONE1
+//If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=130))]), body=[Do(value=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=1), rest=[])]))], els=[If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=132))]), body=[Do(value=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=2), rest=[])]))], els=[If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=140))]), body=[Let(name=exit, index=null, value=Expr(first=Term$TRUE@23ab930d, rest=[]))], els=null)])])
+//Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=130))])
+//Var(name=key)
+push local 0
+//IntConstant(value=130)
+push constant 130
+eq
+if-goto TRUE2
+//If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=132))]), body=[Do(value=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=2), rest=[])]))], els=[If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=140))]), body=[Let(name=exit, index=null, value=Expr(first=Term$TRUE@23ab930d, rest=[]))], els=null)])
+//Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=132))])
+//Var(name=key)
+push local 0
+//IntConstant(value=132)
+push constant 132
+eq
+if-goto TRUE3
+//If(cond=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=140))]), body=[Let(name=exit, index=null, value=Expr(first=Term$TRUE@23ab930d, rest=[]))], els=null)
+//Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=140))])
+//Var(name=key)
+push local 0
+//IntConstant(value=140)
+push constant 140
+eq
+if-goto TRUE4
+goto DONE4
+label TRUE4
+//Let(name=exit, index=null, value=Expr(first=Term$TRUE@23ab930d, rest=[]))
+//Expr(first=Term$TRUE@23ab930d, rest=[])
+//Term$TRUE@23ab930d
+push constant 0
+not
+pop this 3
+label DONE4
+goto DONE3
+label TRUE3
+//Do(value=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=2), rest=[])]))
+//Call(what=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=2), rest=[])]))
+push this 0
+//Expr(first=IntConstant(value=2), rest=[])
+//IntConstant(value=2)
+push constant 2
+call Bat.setDirection 2
+pop temp 0
+label DONE3
+goto DONE2
+label TRUE2
+//Do(value=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=1), rest=[])]))
+//Call(what=SubCall(owner=bat, subName=setDirection, args=[Expr(first=IntConstant(value=1), rest=[])]))
+push this 0
+//Expr(first=IntConstant(value=1), rest=[])
+//IntConstant(value=1)
+push constant 1
+call Bat.setDirection 2
+pop temp 0
+label DONE2
+//While(cond=Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])))]), body=[Let(name=key, index=null, value=Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[])), Do(value=SubCall(owner=bat, subName=move, args=[])), Do(value=SubCall(owner=null, subName=moveBall, args=[])), Do(value=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))])
+label WHILE5
+//Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])))])
+//Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]))), rest=[]))
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]))), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))])))
+//Parens(inner=Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]))
+//Expr(first=Var(name=key), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))])
+//Var(name=key)
+push local 0
+//IntConstant(value=0)
+push constant 0
+eq
+not
+//Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[]))
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Var(name=exit))
+//Var(name=exit)
+push this 3
+not
+and
+not
+if-goto DONE5
+//Let(name=key, index=null, value=Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[])), rest=[])
+//Call(what=SubCall(owner=Keyboard, subName=keyPressed, args=[]))
+call Keyboard.keyPressed 0
+pop local 0
+//Do(value=SubCall(owner=bat, subName=move, args=[]))
+//Call(what=SubCall(owner=bat, subName=move, args=[]))
+push this 0
+call Bat.move 1
+pop temp 0
+//Do(value=SubCall(owner=null, subName=moveBall, args=[]))
+//Call(what=SubCall(owner=null, subName=moveBall, args=[]))
+push pointer 0
+call PongGame.moveBall 1
+pop temp 0
+//Do(value=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))
+//Call(what=SubCall(owner=Sys, subName=wait, args=[Expr(first=IntConstant(value=50), rest=[])]))
+//Expr(first=IntConstant(value=50), rest=[])
+//IntConstant(value=50)
+push constant 50
+call Sys.wait 1
+pop temp 0
+goto WHILE5
+label DONE5
+goto WHILE0
+label DONE0
+//If(cond=Expr(first=Var(name=exit), rest=[]), body=[Do(value=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=10), rest=[]), Expr(first=IntConstant(value=27), rest=[])])), Do(value=SubCall(owner=Output, subName=printString, args=[Expr(first=StrConstant(value=Game Over), rest=[])]))], els=null)
+//Expr(first=Var(name=exit), rest=[])
+//Var(name=exit)
+push this 3
+if-goto TRUE6
+goto DONE6
+label TRUE6
+//Do(value=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=10), rest=[]), Expr(first=IntConstant(value=27), rest=[])]))
+//Call(what=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=10), rest=[]), Expr(first=IntConstant(value=27), rest=[])]))
+//Expr(first=IntConstant(value=10), rest=[])
+//IntConstant(value=10)
+push constant 10
+//Expr(first=IntConstant(value=27), rest=[])
+//IntConstant(value=27)
+push constant 27
+call Output.moveCursor 2
+pop temp 0
+//Do(value=SubCall(owner=Output, subName=printString, args=[Expr(first=StrConstant(value=Game Over), rest=[])]))
+//Call(what=SubCall(owner=Output, subName=printString, args=[Expr(first=StrConstant(value=Game Over), rest=[])]))
+//Expr(first=StrConstant(value=Game Over), rest=[])
+//StrConstant(value=Game Over)
+push constant 9
+call String.new 1
+push constant 71
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 79
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+label DONE6
+//Return(value=null)
+push constant 0
+return
+function PongGame.moveBall 5
+push argument 0
+pop pointer 0
+//Let(name=wall, index=null, value=Expr(first=Call(what=SubCall(owner=ball, subName=move, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=ball, subName=move, args=[])), rest=[])
+//Call(what=SubCall(owner=ball, subName=move, args=[]))
+push this 1
+call Ball.move 1
+pop this 2
+//If(cond=Expr(first=Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$GT@7ab2bfe1, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, Var(name=lastWall))]))), rest=[])))]), body=[Let(name=lastWall, index=null, value=Expr(first=Var(name=wall), rest=[])), Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=0), rest=[])), Let(name=batLeft, index=null, value=Expr(first=Call(what=SubCall(owner=bat, subName=getLeft, args=[])), rest=[])), Let(name=batRight, index=null, value=Expr(first=Call(what=SubCall(owner=bat, subName=getRight, args=[])), rest=[])), Let(name=ballLeft, index=null, value=Expr(first=Call(what=SubCall(owner=ball, subName=getLeft, args=[])), rest=[])), Let(name=ballRight, index=null, value=Expr(first=Call(what=SubCall(owner=ball, subName=getRight, args=[])), rest=[])), If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=4))]), body=[Let(name=exit, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$GT@7ab2bfe1, Var(name=ballRight))])), rest=[(Expr$OR@6438a396, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$LT@619a5dff, Var(name=ballLeft))])))])), If(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[]), body=[If(cond=Expr(first=Var(name=ballRight), rest=[(Expr$LT@619a5dff, Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$ADD@3fa77460, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[]))], els=[If(cond=Expr(first=Var(name=ballLeft), rest=[(Expr$GT@7ab2bfe1, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=1), rest=[]))], els=null)]), Let(name=batWidth, index=null, value=Expr(first=Var(name=batWidth), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=2))])), Do(value=SubCall(owner=bat, subName=setWidth, args=[Expr(first=Var(name=batWidth), rest=[])])), Let(name=score, index=null, value=Expr(first=Var(name=score), rest=[(Expr$ADD@3fa77460, IntConstant(value=1))])), Do(value=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=22), rest=[]), Expr(first=IntConstant(value=7), rest=[])])), Do(value=SubCall(owner=Output, subName=printInt, args=[Expr(first=Var(name=score), rest=[])]))], els=null)], els=null), Do(value=SubCall(owner=ball, subName=bounce, args=[Expr(first=Var(name=bouncingDirection), rest=[])]))], els=null)
+//Expr(first=Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$GT@7ab2bfe1, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, Var(name=lastWall))]))), rest=[])))])
+//Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$GT@7ab2bfe1, IntConstant(value=0))]))
+//Expr(first=Var(name=wall), rest=[(Expr$GT@7ab2bfe1, IntConstant(value=0))])
+//Var(name=wall)
+push this 2
+//IntConstant(value=0)
+push constant 0
+gt
+//Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, Var(name=lastWall))]))), rest=[]))
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, Var(name=lastWall))]))), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, Var(name=lastWall))])))
+//Parens(inner=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, Var(name=lastWall))]))
+//Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, Var(name=lastWall))])
+//Var(name=wall)
+push this 2
+//Var(name=lastWall)
+push this 5
+eq
+not
+and
+if-goto TRUE7
+goto DONE7
+label TRUE7
+//Let(name=lastWall, index=null, value=Expr(first=Var(name=wall), rest=[]))
+//Expr(first=Var(name=wall), rest=[])
+//Var(name=wall)
+push this 2
+pop this 5
+//Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=0), rest=[]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+pop local 0
+//Let(name=batLeft, index=null, value=Expr(first=Call(what=SubCall(owner=bat, subName=getLeft, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=bat, subName=getLeft, args=[])), rest=[])
+//Call(what=SubCall(owner=bat, subName=getLeft, args=[]))
+push this 0
+call Bat.getLeft 1
+pop local 1
+//Let(name=batRight, index=null, value=Expr(first=Call(what=SubCall(owner=bat, subName=getRight, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=bat, subName=getRight, args=[])), rest=[])
+//Call(what=SubCall(owner=bat, subName=getRight, args=[]))
+push this 0
+call Bat.getRight 1
+pop local 2
+//Let(name=ballLeft, index=null, value=Expr(first=Call(what=SubCall(owner=ball, subName=getLeft, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=ball, subName=getLeft, args=[])), rest=[])
+//Call(what=SubCall(owner=ball, subName=getLeft, args=[]))
+push this 1
+call Ball.getLeft 1
+pop local 3
+//Let(name=ballRight, index=null, value=Expr(first=Call(what=SubCall(owner=ball, subName=getRight, args=[])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=ball, subName=getRight, args=[])), rest=[])
+//Call(what=SubCall(owner=ball, subName=getRight, args=[]))
+push this 1
+call Ball.getRight 1
+pop local 4
+//If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=4))]), body=[Let(name=exit, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$GT@7ab2bfe1, Var(name=ballRight))])), rest=[(Expr$OR@6438a396, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$LT@619a5dff, Var(name=ballLeft))])))])), If(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[]), body=[If(cond=Expr(first=Var(name=ballRight), rest=[(Expr$LT@619a5dff, Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$ADD@3fa77460, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[]))], els=[If(cond=Expr(first=Var(name=ballLeft), rest=[(Expr$GT@7ab2bfe1, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=1), rest=[]))], els=null)]), Let(name=batWidth, index=null, value=Expr(first=Var(name=batWidth), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=2))])), Do(value=SubCall(owner=bat, subName=setWidth, args=[Expr(first=Var(name=batWidth), rest=[])])), Let(name=score, index=null, value=Expr(first=Var(name=score), rest=[(Expr$ADD@3fa77460, IntConstant(value=1))])), Do(value=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=22), rest=[]), Expr(first=IntConstant(value=7), rest=[])])), Do(value=SubCall(owner=Output, subName=printInt, args=[Expr(first=Var(name=score), rest=[])]))], els=null)], els=null)
+//Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=4))])
+//Var(name=wall)
+push this 2
+//IntConstant(value=4)
+push constant 4
+eq
+if-goto TRUE8
+goto DONE8
+label TRUE8
+//Let(name=exit, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$GT@7ab2bfe1, Var(name=ballRight))])), rest=[(Expr$OR@6438a396, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$LT@619a5dff, Var(name=ballLeft))])))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$GT@7ab2bfe1, Var(name=ballRight))])), rest=[(Expr$OR@6438a396, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$LT@619a5dff, Var(name=ballLeft))])))])
+//Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$GT@7ab2bfe1, Var(name=ballRight))]))
+//Expr(first=Var(name=batLeft), rest=[(Expr$GT@7ab2bfe1, Var(name=ballRight))])
+//Var(name=batLeft)
+push local 1
+//Var(name=ballRight)
+push local 4
+gt
+//Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$LT@619a5dff, Var(name=ballLeft))]))
+//Expr(first=Var(name=batRight), rest=[(Expr$LT@619a5dff, Var(name=ballLeft))])
+//Var(name=batRight)
+push local 2
+//Var(name=ballLeft)
+push local 3
+lt
+or
+pop this 3
+//If(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[]), body=[If(cond=Expr(first=Var(name=ballRight), rest=[(Expr$LT@619a5dff, Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$ADD@3fa77460, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[]))], els=[If(cond=Expr(first=Var(name=ballLeft), rest=[(Expr$GT@7ab2bfe1, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=1), rest=[]))], els=null)]), Let(name=batWidth, index=null, value=Expr(first=Var(name=batWidth), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=2))])), Do(value=SubCall(owner=bat, subName=setWidth, args=[Expr(first=Var(name=batWidth), rest=[])])), Let(name=score, index=null, value=Expr(first=Var(name=score), rest=[(Expr$ADD@3fa77460, IntConstant(value=1))])), Do(value=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=22), rest=[]), Expr(first=IntConstant(value=7), rest=[])])), Do(value=SubCall(owner=Output, subName=printInt, args=[Expr(first=Var(name=score), rest=[])]))], els=null)
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Var(name=exit)), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Var(name=exit))
+//Var(name=exit)
+push this 3
+not
+if-goto TRUE9
+goto DONE9
+label TRUE9
+//If(cond=Expr(first=Var(name=ballRight), rest=[(Expr$LT@619a5dff, Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$ADD@3fa77460, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[]))], els=[If(cond=Expr(first=Var(name=ballLeft), rest=[(Expr$GT@7ab2bfe1, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=1), rest=[]))], els=null)])
+//Expr(first=Var(name=ballRight), rest=[(Expr$LT@619a5dff, Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$ADD@3fa77460, IntConstant(value=10))])))])
+//Var(name=ballRight)
+push local 4
+//Parens(inner=Expr(first=Var(name=batLeft), rest=[(Expr$ADD@3fa77460, IntConstant(value=10))]))
+//Expr(first=Var(name=batLeft), rest=[(Expr$ADD@3fa77460, IntConstant(value=10))])
+//Var(name=batLeft)
+push local 1
+//IntConstant(value=10)
+push constant 10
+add
+lt
+if-goto TRUE10
+//If(cond=Expr(first=Var(name=ballLeft), rest=[(Expr$GT@7ab2bfe1, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))])))]), body=[Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=1), rest=[]))], els=null)
+//Expr(first=Var(name=ballLeft), rest=[(Expr$GT@7ab2bfe1, Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))])))])
+//Var(name=ballLeft)
+push local 3
+//Parens(inner=Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))]))
+//Expr(first=Var(name=batRight), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=10))])
+//Var(name=batRight)
+push local 2
+//IntConstant(value=10)
+push constant 10
+sub
+gt
+if-goto TRUE11
+goto DONE11
+label TRUE11
+//Let(name=bouncingDirection, index=null, value=Expr(first=IntConstant(value=1), rest=[]))
+//Expr(first=IntConstant(value=1), rest=[])
+//IntConstant(value=1)
+push constant 1
+pop local 0
+label DONE11
+goto DONE10
+label TRUE10
+//Let(name=bouncingDirection, index=null, value=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[]))
+//Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])
+//Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1))
+//IntConstant(value=1)
+push constant 1
+neg
+pop local 0
+label DONE10
+//Let(name=batWidth, index=null, value=Expr(first=Var(name=batWidth), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=2))]))
+//Expr(first=Var(name=batWidth), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=2))])
+//Var(name=batWidth)
+push this 6
+//IntConstant(value=2)
+push constant 2
+sub
+pop this 6
+//Do(value=SubCall(owner=bat, subName=setWidth, args=[Expr(first=Var(name=batWidth), rest=[])]))
+//Call(what=SubCall(owner=bat, subName=setWidth, args=[Expr(first=Var(name=batWidth), rest=[])]))
+push this 0
+//Expr(first=Var(name=batWidth), rest=[])
+//Var(name=batWidth)
+push this 6
+call Bat.setWidth 2
+pop temp 0
+//Let(name=score, index=null, value=Expr(first=Var(name=score), rest=[(Expr$ADD@3fa77460, IntConstant(value=1))]))
+//Expr(first=Var(name=score), rest=[(Expr$ADD@3fa77460, IntConstant(value=1))])
+//Var(name=score)
+push this 4
+//IntConstant(value=1)
+push constant 1
+add
+pop this 4
+//Do(value=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=22), rest=[]), Expr(first=IntConstant(value=7), rest=[])]))
+//Call(what=SubCall(owner=Output, subName=moveCursor, args=[Expr(first=IntConstant(value=22), rest=[]), Expr(first=IntConstant(value=7), rest=[])]))
+//Expr(first=IntConstant(value=22), rest=[])
+//IntConstant(value=22)
+push constant 22
+//Expr(first=IntConstant(value=7), rest=[])
+//IntConstant(value=7)
+push constant 7
+call Output.moveCursor 2
+pop temp 0
+//Do(value=SubCall(owner=Output, subName=printInt, args=[Expr(first=Var(name=score), rest=[])]))
+//Call(what=SubCall(owner=Output, subName=printInt, args=[Expr(first=Var(name=score), rest=[])]))
+//Expr(first=Var(name=score), rest=[])
+//Var(name=score)
+push this 4
+call Output.printInt 1
+pop temp 0
+label DONE9
+label DONE8
+//Do(value=SubCall(owner=ball, subName=bounce, args=[Expr(first=Var(name=bouncingDirection), rest=[])]))
+//Call(what=SubCall(owner=ball, subName=bounce, args=[Expr(first=Var(name=bouncingDirection), rest=[])]))
+push this 1
+//Expr(first=Var(name=bouncingDirection), rest=[])
+//Var(name=bouncingDirection)
+push local 0
+call Ball.bounce 2
+pop temp 0
+label DONE7
+//Return(value=null)
+push constant 0
+return

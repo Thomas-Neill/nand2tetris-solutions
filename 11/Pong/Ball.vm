@@ -1,0 +1,827 @@
+function Ball.new 0
+push constant 15
+call Memory.alloc 1
+pop pointer 0
+//Let(name=x, index=null, value=Expr(first=Var(name=Ax), rest=[]))
+//Expr(first=Var(name=Ax), rest=[])
+//Var(name=Ax)
+push argument 0
+pop this 0
+//Let(name=y, index=null, value=Expr(first=Var(name=Ay), rest=[]))
+//Expr(first=Var(name=Ay), rest=[])
+//Var(name=Ay)
+push argument 1
+pop this 1
+//Let(name=leftWall, index=null, value=Expr(first=Var(name=AleftWall), rest=[]))
+//Expr(first=Var(name=AleftWall), rest=[])
+//Var(name=AleftWall)
+push argument 2
+pop this 10
+//Let(name=rightWall, index=null, value=Expr(first=Var(name=ArightWall), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=6))]))
+//Expr(first=Var(name=ArightWall), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=6))])
+//Var(name=ArightWall)
+push argument 3
+//IntConstant(value=6)
+push constant 6
+sub
+pop this 11
+//Let(name=topWall, index=null, value=Expr(first=Var(name=AtopWall), rest=[]))
+//Expr(first=Var(name=AtopWall), rest=[])
+//Var(name=AtopWall)
+push argument 4
+pop this 12
+//Let(name=bottomWall, index=null, value=Expr(first=Var(name=AbottomWall), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=6))]))
+//Expr(first=Var(name=AbottomWall), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=6))])
+//Var(name=AbottomWall)
+push argument 5
+//IntConstant(value=6)
+push constant 6
+sub
+pop this 13
+//Let(name=wall, index=null, value=Expr(first=IntConstant(value=0), rest=[]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+pop this 14
+//Do(value=SubCall(owner=null, subName=show, args=[]))
+//Call(what=SubCall(owner=null, subName=show, args=[]))
+push pointer 0
+call Ball.show 1
+pop temp 0
+//Return(value=Expr(first=Term$THIS@2d8e6db6, rest=[]))
+//Expr(first=Term$THIS@2d8e6db6, rest=[])
+//Term$THIS@2d8e6db6
+push pointer 0
+return
+function Ball.dispose 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=Memory, subName=deAlloc, args=[Expr(first=Term$THIS@2d8e6db6, rest=[])]))
+//Call(what=SubCall(owner=Memory, subName=deAlloc, args=[Expr(first=Term$THIS@2d8e6db6, rest=[])]))
+//Expr(first=Term$THIS@2d8e6db6, rest=[])
+//Term$THIS@2d8e6db6
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function Ball.show 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@23ab930d, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$TRUE@23ab930d, rest=[])]))
+//Expr(first=Term$TRUE@23ab930d, rest=[])
+//Term$TRUE@23ab930d
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=null, subName=draw, args=[]))
+//Call(what=SubCall(owner=null, subName=draw, args=[]))
+push pointer 0
+call Ball.draw 1
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function Ball.hide 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@4534b60d, rest=[])]))
+//Call(what=SubCall(owner=Screen, subName=setColor, args=[Expr(first=Term$FALSE@4534b60d, rest=[])]))
+//Expr(first=Term$FALSE@4534b60d, rest=[])
+//Term$FALSE@4534b60d
+push constant 0
+call Screen.setColor 1
+pop temp 0
+//Do(value=SubCall(owner=null, subName=draw, args=[]))
+//Call(what=SubCall(owner=null, subName=draw, args=[]))
+push pointer 0
+call Ball.draw 1
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function Ball.draw 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))]), Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))])]))
+//Call(what=SubCall(owner=Screen, subName=drawRectangle, args=[Expr(first=Var(name=x), rest=[]), Expr(first=Var(name=y), rest=[]), Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))]), Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))])]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+//Expr(first=Var(name=y), rest=[])
+//Var(name=y)
+push this 1
+//Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))])
+//Var(name=x)
+push this 0
+//IntConstant(value=5)
+push constant 5
+add
+//Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))])
+//Var(name=y)
+push this 1
+//IntConstant(value=5)
+push constant 5
+add
+call Screen.drawRectangle 4
+pop temp 0
+//Return(value=null)
+push constant 0
+return
+function Ball.getLeft 0
+push argument 0
+pop pointer 0
+//Return(value=Expr(first=Var(name=x), rest=[]))
+//Expr(first=Var(name=x), rest=[])
+//Var(name=x)
+push this 0
+return
+function Ball.getRight 0
+push argument 0
+pop pointer 0
+//Return(value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=5))])
+//Var(name=x)
+push this 0
+//IntConstant(value=5)
+push constant 5
+add
+return
+function Ball.setDestination 3
+push argument 0
+pop pointer 0
+//Let(name=lengthx, index=null, value=Expr(first=Var(name=destx), rest=[(Expr$SUB@4d76f3f8, Var(name=x))]))
+//Expr(first=Var(name=destx), rest=[(Expr$SUB@4d76f3f8, Var(name=x))])
+//Var(name=destx)
+push argument 1
+//Var(name=x)
+push this 0
+sub
+pop this 2
+//Let(name=lengthy, index=null, value=Expr(first=Var(name=desty), rest=[(Expr$SUB@4d76f3f8, Var(name=y))]))
+//Expr(first=Var(name=desty), rest=[(Expr$SUB@4d76f3f8, Var(name=y))])
+//Var(name=desty)
+push argument 2
+//Var(name=y)
+push this 1
+sub
+pop this 3
+//Let(name=dx, index=null, value=Expr(first=Call(what=SubCall(owner=Math, subName=abs, args=[Expr(first=Var(name=lengthx), rest=[])])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=Math, subName=abs, args=[Expr(first=Var(name=lengthx), rest=[])])), rest=[])
+//Call(what=SubCall(owner=Math, subName=abs, args=[Expr(first=Var(name=lengthx), rest=[])]))
+//Expr(first=Var(name=lengthx), rest=[])
+//Var(name=lengthx)
+push this 2
+call Math.abs 1
+pop local 0
+//Let(name=dy, index=null, value=Expr(first=Call(what=SubCall(owner=Math, subName=abs, args=[Expr(first=Var(name=lengthy), rest=[])])), rest=[]))
+//Expr(first=Call(what=SubCall(owner=Math, subName=abs, args=[Expr(first=Var(name=lengthy), rest=[])])), rest=[])
+//Call(what=SubCall(owner=Math, subName=abs, args=[Expr(first=Var(name=lengthy), rest=[])]))
+//Expr(first=Var(name=lengthy), rest=[])
+//Var(name=lengthy)
+push this 3
+call Math.abs 1
+pop local 1
+//Let(name=invert, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=dx), rest=[(Expr$LT@619a5dff, Var(name=dy))])), rest=[]))
+//Expr(first=Parens(inner=Expr(first=Var(name=dx), rest=[(Expr$LT@619a5dff, Var(name=dy))])), rest=[])
+//Parens(inner=Expr(first=Var(name=dx), rest=[(Expr$LT@619a5dff, Var(name=dy))]))
+//Expr(first=Var(name=dx), rest=[(Expr$LT@619a5dff, Var(name=dy))])
+//Var(name=dx)
+push local 0
+//Var(name=dy)
+push local 1
+lt
+pop this 7
+//If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=temp, index=null, value=Expr(first=Var(name=dx), rest=[])), Let(name=dx, index=null, value=Expr(first=Var(name=dy), rest=[])), Let(name=dy, index=null, value=Expr(first=Var(name=temp), rest=[])), Let(name=positivex, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])), rest=[])), Let(name=positivey, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])), rest=[]))], els=[Let(name=positivex, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])), rest=[])), Let(name=positivey, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])), rest=[]))])
+//Expr(first=Var(name=invert), rest=[])
+//Var(name=invert)
+push this 7
+if-goto TRUE0
+//Let(name=positivex, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])), rest=[]))
+//Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])), rest=[])
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))]))
+//Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])
+//Var(name=x)
+push this 0
+//Var(name=destx)
+push argument 1
+lt
+pop this 8
+//Let(name=positivey, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])), rest=[]))
+//Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])), rest=[])
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))]))
+//Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])
+//Var(name=y)
+push this 1
+//Var(name=desty)
+push argument 2
+lt
+pop this 9
+goto DONE0
+label TRUE0
+//Let(name=temp, index=null, value=Expr(first=Var(name=dx), rest=[]))
+//Expr(first=Var(name=dx), rest=[])
+//Var(name=dx)
+push local 0
+pop local 2
+//Let(name=dx, index=null, value=Expr(first=Var(name=dy), rest=[]))
+//Expr(first=Var(name=dy), rest=[])
+//Var(name=dy)
+push local 1
+pop local 0
+//Let(name=dy, index=null, value=Expr(first=Var(name=temp), rest=[]))
+//Expr(first=Var(name=temp), rest=[])
+//Var(name=temp)
+push local 2
+pop local 1
+//Let(name=positivex, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])), rest=[]))
+//Expr(first=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])), rest=[])
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))]))
+//Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=desty))])
+//Var(name=y)
+push this 1
+//Var(name=desty)
+push argument 2
+lt
+pop this 8
+//Let(name=positivey, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])), rest=[]))
+//Expr(first=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])), rest=[])
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))]))
+//Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=destx))])
+//Var(name=x)
+push this 0
+//Var(name=destx)
+push argument 1
+lt
+pop this 9
+label DONE0
+//Let(name=d, index=null, value=Expr(first=Parens(inner=Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Var(name=dy))])), rest=[(Expr$SUB@4d76f3f8, Var(name=dx))]))
+//Expr(first=Parens(inner=Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Var(name=dy))])), rest=[(Expr$SUB@4d76f3f8, Var(name=dx))])
+//Parens(inner=Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Var(name=dy))]))
+//Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Var(name=dy))])
+//IntConstant(value=2)
+push constant 2
+//Var(name=dy)
+push local 1
+call Math.multiply 2
+//Var(name=dx)
+push local 0
+sub
+pop this 4
+//Let(name=straightD, index=null, value=Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Var(name=dy))]))
+//Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Var(name=dy))])
+//IntConstant(value=2)
+push constant 2
+//Var(name=dy)
+push local 1
+call Math.multiply 2
+pop this 5
+//Let(name=diagonalD, index=null, value=Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Var(name=dy), rest=[(Expr$SUB@4d76f3f8, Var(name=dx))])))]))
+//Expr(first=IntConstant(value=2), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Var(name=dy), rest=[(Expr$SUB@4d76f3f8, Var(name=dx))])))])
+//IntConstant(value=2)
+push constant 2
+//Parens(inner=Expr(first=Var(name=dy), rest=[(Expr$SUB@4d76f3f8, Var(name=dx))]))
+//Expr(first=Var(name=dy), rest=[(Expr$SUB@4d76f3f8, Var(name=dx))])
+//Var(name=dy)
+push local 1
+//Var(name=dx)
+push local 0
+sub
+call Math.multiply 2
+pop this 6
+//Return(value=null)
+push constant 0
+return
+function Ball.move 0
+push argument 0
+pop pointer 0
+//Do(value=SubCall(owner=null, subName=hide, args=[]))
+//Call(what=SubCall(owner=null, subName=hide, args=[]))
+push pointer 0
+call Ball.hide 1
+pop temp 0
+//If(cond=Expr(first=Var(name=d), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]), body=[Let(name=d, index=null, value=Expr(first=Var(name=d), rest=[(Expr$ADD@3fa77460, Var(name=straightD))]))], els=[Let(name=d, index=null, value=Expr(first=Var(name=d), rest=[(Expr$ADD@3fa77460, Var(name=diagonalD))])), If(cond=Expr(first=Var(name=positivey), rest=[]), body=[If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))], els=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))])], els=[If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))], els=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))])])])
+//Expr(first=Var(name=d), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])
+//Var(name=d)
+push this 4
+//IntConstant(value=0)
+push constant 0
+lt
+if-goto TRUE1
+//Let(name=d, index=null, value=Expr(first=Var(name=d), rest=[(Expr$ADD@3fa77460, Var(name=diagonalD))]))
+//Expr(first=Var(name=d), rest=[(Expr$ADD@3fa77460, Var(name=diagonalD))])
+//Var(name=d)
+push this 4
+//Var(name=diagonalD)
+push this 6
+add
+pop this 4
+//If(cond=Expr(first=Var(name=positivey), rest=[]), body=[If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))], els=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))])], els=[If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))], els=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))])])
+//Expr(first=Var(name=positivey), rest=[])
+//Var(name=positivey)
+push this 9
+if-goto TRUE2
+//If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))], els=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))])
+//Expr(first=Var(name=invert), rest=[])
+//Var(name=invert)
+push this 7
+if-goto TRUE3
+//Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))
+//Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))])
+//Var(name=y)
+push this 1
+//IntConstant(value=4)
+push constant 4
+sub
+pop this 1
+goto DONE3
+label TRUE3
+//Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))
+//Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))])
+//Var(name=x)
+push this 0
+//IntConstant(value=4)
+push constant 4
+sub
+pop this 0
+label DONE3
+goto DONE2
+label TRUE2
+//If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))], els=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))])
+//Expr(first=Var(name=invert), rest=[])
+//Var(name=invert)
+push this 7
+if-goto TRUE4
+//Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))])
+//Var(name=y)
+push this 1
+//IntConstant(value=4)
+push constant 4
+add
+pop this 1
+goto DONE4
+label TRUE4
+//Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))])
+//Var(name=x)
+push this 0
+//IntConstant(value=4)
+push constant 4
+add
+pop this 0
+label DONE4
+label DONE2
+goto DONE1
+label TRUE1
+//Let(name=d, index=null, value=Expr(first=Var(name=d), rest=[(Expr$ADD@3fa77460, Var(name=straightD))]))
+//Expr(first=Var(name=d), rest=[(Expr$ADD@3fa77460, Var(name=straightD))])
+//Var(name=d)
+push this 4
+//Var(name=straightD)
+push this 5
+add
+pop this 4
+label DONE1
+//If(cond=Expr(first=Var(name=positivex), rest=[]), body=[If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))], els=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))])], els=[If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))], els=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))])])
+//Expr(first=Var(name=positivex), rest=[])
+//Var(name=positivex)
+push this 8
+if-goto TRUE5
+//If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))], els=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))])
+//Expr(first=Var(name=invert), rest=[])
+//Var(name=invert)
+push this 7
+if-goto TRUE6
+//Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))
+//Expr(first=Var(name=x), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))])
+//Var(name=x)
+push this 0
+//IntConstant(value=4)
+push constant 4
+sub
+pop this 0
+goto DONE6
+label TRUE6
+//Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))]))
+//Expr(first=Var(name=y), rest=[(Expr$SUB@4d76f3f8, IntConstant(value=4))])
+//Var(name=y)
+push this 1
+//IntConstant(value=4)
+push constant 4
+sub
+pop this 1
+label DONE6
+goto DONE5
+label TRUE5
+//If(cond=Expr(first=Var(name=invert), rest=[]), body=[Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))], els=[Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))])
+//Expr(first=Var(name=invert), rest=[])
+//Var(name=invert)
+push this 7
+if-goto TRUE7
+//Let(name=x, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))])
+//Var(name=x)
+push this 0
+//IntConstant(value=4)
+push constant 4
+add
+pop this 0
+goto DONE7
+label TRUE7
+//Let(name=y, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, IntConstant(value=4))])
+//Var(name=y)
+push this 1
+//IntConstant(value=4)
+push constant 4
+add
+pop this 1
+label DONE7
+label DONE5
+//If(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$GT@7ab2bfe1, Var(name=leftWall))]))), rest=[]), body=[Let(name=wall, index=null, value=Expr(first=IntConstant(value=1), rest=[])), Let(name=x, index=null, value=Expr(first=Var(name=leftWall), rest=[]))], els=null)
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$GT@7ab2bfe1, Var(name=leftWall))]))), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$GT@7ab2bfe1, Var(name=leftWall))])))
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$GT@7ab2bfe1, Var(name=leftWall))]))
+//Expr(first=Var(name=x), rest=[(Expr$GT@7ab2bfe1, Var(name=leftWall))])
+//Var(name=x)
+push this 0
+//Var(name=leftWall)
+push this 10
+gt
+not
+if-goto TRUE8
+goto DONE8
+label TRUE8
+//Let(name=wall, index=null, value=Expr(first=IntConstant(value=1), rest=[]))
+//Expr(first=IntConstant(value=1), rest=[])
+//IntConstant(value=1)
+push constant 1
+pop this 14
+//Let(name=x, index=null, value=Expr(first=Var(name=leftWall), rest=[]))
+//Expr(first=Var(name=leftWall), rest=[])
+//Var(name=leftWall)
+push this 10
+pop this 0
+label DONE8
+//If(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=rightWall))]))), rest=[]), body=[Let(name=wall, index=null, value=Expr(first=IntConstant(value=2), rest=[])), Let(name=x, index=null, value=Expr(first=Var(name=rightWall), rest=[]))], els=null)
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=rightWall))]))), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=rightWall))])))
+//Parens(inner=Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=rightWall))]))
+//Expr(first=Var(name=x), rest=[(Expr$LT@619a5dff, Var(name=rightWall))])
+//Var(name=x)
+push this 0
+//Var(name=rightWall)
+push this 11
+lt
+not
+if-goto TRUE9
+goto DONE9
+label TRUE9
+//Let(name=wall, index=null, value=Expr(first=IntConstant(value=2), rest=[]))
+//Expr(first=IntConstant(value=2), rest=[])
+//IntConstant(value=2)
+push constant 2
+pop this 14
+//Let(name=x, index=null, value=Expr(first=Var(name=rightWall), rest=[]))
+//Expr(first=Var(name=rightWall), rest=[])
+//Var(name=rightWall)
+push this 11
+pop this 0
+label DONE9
+//If(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$GT@7ab2bfe1, Var(name=topWall))]))), rest=[]), body=[Let(name=wall, index=null, value=Expr(first=IntConstant(value=3), rest=[])), Let(name=y, index=null, value=Expr(first=Var(name=topWall), rest=[]))], els=null)
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$GT@7ab2bfe1, Var(name=topWall))]))), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$GT@7ab2bfe1, Var(name=topWall))])))
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$GT@7ab2bfe1, Var(name=topWall))]))
+//Expr(first=Var(name=y), rest=[(Expr$GT@7ab2bfe1, Var(name=topWall))])
+//Var(name=y)
+push this 1
+//Var(name=topWall)
+push this 12
+gt
+not
+if-goto TRUE10
+goto DONE10
+label TRUE10
+//Let(name=wall, index=null, value=Expr(first=IntConstant(value=3), rest=[]))
+//Expr(first=IntConstant(value=3), rest=[])
+//IntConstant(value=3)
+push constant 3
+pop this 14
+//Let(name=y, index=null, value=Expr(first=Var(name=topWall), rest=[]))
+//Expr(first=Var(name=topWall), rest=[])
+//Var(name=topWall)
+push this 12
+pop this 1
+label DONE10
+//If(cond=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=bottomWall))]))), rest=[]), body=[Let(name=wall, index=null, value=Expr(first=IntConstant(value=4), rest=[])), Let(name=y, index=null, value=Expr(first=Var(name=bottomWall), rest=[]))], els=null)
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=bottomWall))]))), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=bottomWall))])))
+//Parens(inner=Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=bottomWall))]))
+//Expr(first=Var(name=y), rest=[(Expr$LT@619a5dff, Var(name=bottomWall))])
+//Var(name=y)
+push this 1
+//Var(name=bottomWall)
+push this 13
+lt
+not
+if-goto TRUE11
+goto DONE11
+label TRUE11
+//Let(name=wall, index=null, value=Expr(first=IntConstant(value=4), rest=[]))
+//Expr(first=IntConstant(value=4), rest=[])
+//IntConstant(value=4)
+push constant 4
+pop this 14
+//Let(name=y, index=null, value=Expr(first=Var(name=bottomWall), rest=[]))
+//Expr(first=Var(name=bottomWall), rest=[])
+//Var(name=bottomWall)
+push this 13
+pop this 1
+label DONE11
+//Do(value=SubCall(owner=null, subName=show, args=[]))
+//Call(what=SubCall(owner=null, subName=show, args=[]))
+push pointer 0
+call Ball.show 1
+pop temp 0
+//Return(value=Expr(first=Var(name=wall), rest=[]))
+//Expr(first=Var(name=wall), rest=[])
+//Var(name=wall)
+push this 14
+return
+function Ball.bounce 5
+push argument 0
+pop pointer 0
+//Let(name=divLengthx, index=null, value=Expr(first=Var(name=lengthx), rest=[(Expr$DIV@497470ed, IntConstant(value=10))]))
+//Expr(first=Var(name=lengthx), rest=[(Expr$DIV@497470ed, IntConstant(value=10))])
+//Var(name=lengthx)
+push this 2
+//IntConstant(value=10)
+push constant 10
+call Math.divide 2
+pop local 2
+//Let(name=divLengthy, index=null, value=Expr(first=Var(name=lengthy), rest=[(Expr$DIV@497470ed, IntConstant(value=10))]))
+//Expr(first=Var(name=lengthy), rest=[(Expr$DIV@497470ed, IntConstant(value=10))])
+//Var(name=lengthy)
+push this 3
+//IntConstant(value=10)
+push constant 10
+call Math.divide 2
+pop local 3
+//If(cond=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))]), body=[Let(name=factor, index=null, value=Expr(first=IntConstant(value=10), rest=[]))], els=[If(cond=Expr(first=Parens(inner=Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))])))])), rest=[(Expr$OR@6438a396, Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])))])))])))]), body=[Let(name=factor, index=null, value=Expr(first=IntConstant(value=20), rest=[]))], els=[Let(name=factor, index=null, value=Expr(first=IntConstant(value=5), rest=[]))])])
+//Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=0))])
+//Var(name=bouncingDirection)
+push argument 1
+//IntConstant(value=0)
+push constant 0
+eq
+if-goto TRUE12
+//If(cond=Expr(first=Parens(inner=Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))])))])), rest=[(Expr$OR@6438a396, Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])))])))])))]), body=[Let(name=factor, index=null, value=Expr(first=IntConstant(value=20), rest=[]))], els=[Let(name=factor, index=null, value=Expr(first=IntConstant(value=5), rest=[]))])
+//Expr(first=Parens(inner=Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))])))])), rest=[(Expr$OR@6438a396, Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])))])))])))])
+//Parens(inner=Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))])))]))
+//Expr(first=Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))), rest=[])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))])))])
+//Parens(inner=Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))), rest=[]))
+//Expr(first=Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))), rest=[])
+//Unary(what=Term$NOT@7e32c033, term=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])))
+//Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))
+//Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])
+//Var(name=lengthx)
+push this 2
+//IntConstant(value=0)
+push constant 0
+lt
+not
+//Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))]))
+//Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))])
+//Var(name=bouncingDirection)
+push argument 1
+//IntConstant(value=1)
+push constant 1
+eq
+and
+//Parens(inner=Expr(first=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])))])))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])), rest=[(Expr$AND@b1a58a3, Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])))])))])
+//Parens(inner=Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))]))
+//Expr(first=Var(name=lengthx), rest=[(Expr$LT@619a5dff, IntConstant(value=0))])
+//Var(name=lengthx)
+push this 2
+//IntConstant(value=0)
+push constant 0
+lt
+//Parens(inner=Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])))]))
+//Expr(first=Var(name=bouncingDirection), rest=[(Expr$EQ@63c12fb0, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])))])
+//Var(name=bouncingDirection)
+push argument 1
+//Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[]))
+//Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1)), rest=[])
+//Unary(what=Term$NEG@e2144e4, term=IntConstant(value=1))
+//IntConstant(value=1)
+push constant 1
+neg
+eq
+and
+or
+if-goto TRUE13
+//Let(name=factor, index=null, value=Expr(first=IntConstant(value=5), rest=[]))
+//Expr(first=IntConstant(value=5), rest=[])
+//IntConstant(value=5)
+push constant 5
+pop local 4
+goto DONE13
+label TRUE13
+//Let(name=factor, index=null, value=Expr(first=IntConstant(value=20), rest=[]))
+//Expr(first=IntConstant(value=20), rest=[])
+//IntConstant(value=20)
+push constant 20
+pop local 4
+label DONE13
+goto DONE12
+label TRUE12
+//Let(name=factor, index=null, value=Expr(first=IntConstant(value=10), rest=[]))
+//Expr(first=IntConstant(value=10), rest=[])
+//IntConstant(value=10)
+push constant 10
+pop local 4
+label DONE12
+//If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))]), body=[Let(name=newx, index=null, value=Expr(first=IntConstant(value=506), rest=[])), Let(name=newy, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthx))])), Let(name=newy, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))], els=[If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=2))]), body=[Let(name=newx, index=null, value=Expr(first=IntConstant(value=0), rest=[])), Let(name=newy, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, IntConstant(value=50))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthx))])), Let(name=newy, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))], els=[If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=3))]), body=[Let(name=newy, index=null, value=Expr(first=IntConstant(value=250), rest=[])), Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])), Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))], els=[Let(name=newy, index=null, value=Expr(first=IntConstant(value=0), rest=[])), Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, IntConstant(value=25))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])), Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))])])])
+//Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=1))])
+//Var(name=wall)
+push this 14
+//IntConstant(value=1)
+push constant 1
+eq
+if-goto TRUE14
+//If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=2))]), body=[Let(name=newx, index=null, value=Expr(first=IntConstant(value=0), rest=[])), Let(name=newy, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, IntConstant(value=50))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthx))])), Let(name=newy, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))], els=[If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=3))]), body=[Let(name=newy, index=null, value=Expr(first=IntConstant(value=250), rest=[])), Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])), Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))], els=[Let(name=newy, index=null, value=Expr(first=IntConstant(value=0), rest=[])), Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, IntConstant(value=25))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])), Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))])])
+//Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=2))])
+//Var(name=wall)
+push this 14
+//IntConstant(value=2)
+push constant 2
+eq
+if-goto TRUE15
+//If(cond=Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=3))]), body=[Let(name=newy, index=null, value=Expr(first=IntConstant(value=250), rest=[])), Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])), Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))], els=[Let(name=newy, index=null, value=Expr(first=IntConstant(value=0), rest=[])), Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, IntConstant(value=25))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])), Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))])
+//Expr(first=Var(name=wall), rest=[(Expr$EQ@63c12fb0, IntConstant(value=3))])
+//Var(name=wall)
+push this 14
+//IntConstant(value=3)
+push constant 3
+eq
+if-goto TRUE16
+//Let(name=newy, index=null, value=Expr(first=IntConstant(value=0), rest=[]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+pop local 1
+//Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, IntConstant(value=25))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, IntConstant(value=25))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])
+//Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, IntConstant(value=25))]))
+//Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, IntConstant(value=25))])
+//Var(name=divLengthx)
+push local 2
+//IntConstant(value=25)
+push constant 25
+call Math.multiply 2
+//Var(name=divLengthy)
+push local 3
+call Math.divide 2
+pop local 0
+//Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))])
+//Var(name=x)
+push this 0
+//Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))]))
+//Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])
+//Var(name=newx)
+push local 0
+//Var(name=factor)
+push local 4
+call Math.multiply 2
+add
+pop local 0
+goto DONE16
+label TRUE16
+//Let(name=newy, index=null, value=Expr(first=IntConstant(value=250), rest=[]))
+//Expr(first=IntConstant(value=250), rest=[])
+//IntConstant(value=250)
+push constant 250
+pop local 1
+//Let(name=newx, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthy))])
+//Parens(inner=Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])))]))
+//Expr(first=Var(name=divLengthx), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])))])
+//Var(name=divLengthx)
+push local 2
+//Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[]))
+//Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25)), rest=[])
+//Unary(what=Term$NEG@e2144e4, term=IntConstant(value=25))
+//IntConstant(value=25)
+push constant 25
+neg
+call Math.multiply 2
+//Var(name=divLengthy)
+push local 3
+call Math.divide 2
+pop local 0
+//Let(name=newx, index=null, value=Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))
+//Expr(first=Var(name=x), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))])
+//Var(name=x)
+push this 0
+//Parens(inner=Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))]))
+//Expr(first=Var(name=newx), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])
+//Var(name=newx)
+push local 0
+//Var(name=factor)
+push local 4
+call Math.multiply 2
+add
+pop local 0
+label DONE16
+goto DONE15
+label TRUE15
+//Let(name=newx, index=null, value=Expr(first=IntConstant(value=0), rest=[]))
+//Expr(first=IntConstant(value=0), rest=[])
+//IntConstant(value=0)
+push constant 0
+pop local 0
+//Let(name=newy, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, IntConstant(value=50))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthx))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, IntConstant(value=50))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthx))])
+//Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, IntConstant(value=50))]))
+//Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, IntConstant(value=50))])
+//Var(name=divLengthy)
+push local 3
+//IntConstant(value=50)
+push constant 50
+call Math.multiply 2
+//Var(name=divLengthx)
+push local 2
+call Math.divide 2
+pop local 1
+//Let(name=newy, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))])
+//Var(name=y)
+push this 1
+//Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))]))
+//Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])
+//Var(name=newy)
+push local 1
+//Var(name=factor)
+push local 4
+call Math.multiply 2
+add
+pop local 1
+label DONE15
+goto DONE14
+label TRUE14
+//Let(name=newx, index=null, value=Expr(first=IntConstant(value=506), rest=[]))
+//Expr(first=IntConstant(value=506), rest=[])
+//IntConstant(value=506)
+push constant 506
+pop local 0
+//Let(name=newy, index=null, value=Expr(first=Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthx))]))
+//Expr(first=Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50)), rest=[])))])), rest=[(Expr$DIV@497470ed, Var(name=divLengthx))])
+//Parens(inner=Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50)), rest=[])))]))
+//Expr(first=Var(name=divLengthy), rest=[(Expr$MUL@1ed6993a, Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50)), rest=[])))])
+//Var(name=divLengthy)
+push local 3
+//Parens(inner=Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50)), rest=[]))
+//Expr(first=Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50)), rest=[])
+//Unary(what=Term$NEG@e2144e4, term=IntConstant(value=50))
+//IntConstant(value=50)
+push constant 50
+neg
+call Math.multiply 2
+//Var(name=divLengthx)
+push local 2
+call Math.divide 2
+pop local 1
+//Let(name=newy, index=null, value=Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))]))
+//Expr(first=Var(name=y), rest=[(Expr$ADD@3fa77460, Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])))])
+//Var(name=y)
+push this 1
+//Parens(inner=Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))]))
+//Expr(first=Var(name=newy), rest=[(Expr$MUL@1ed6993a, Var(name=factor))])
+//Var(name=newy)
+push local 1
+//Var(name=factor)
+push local 4
+call Math.multiply 2
+add
+pop local 1
+label DONE14
+//Do(value=SubCall(owner=null, subName=setDestination, args=[Expr(first=Var(name=newx), rest=[]), Expr(first=Var(name=newy), rest=[])]))
+//Call(what=SubCall(owner=null, subName=setDestination, args=[Expr(first=Var(name=newx), rest=[]), Expr(first=Var(name=newy), rest=[])]))
+push pointer 0
+//Expr(first=Var(name=newx), rest=[])
+//Var(name=newx)
+push local 0
+//Expr(first=Var(name=newy), rest=[])
+//Var(name=newy)
+push local 1
+call Ball.setDestination 3
+pop temp 0
+//Return(value=null)
+push constant 0
+return

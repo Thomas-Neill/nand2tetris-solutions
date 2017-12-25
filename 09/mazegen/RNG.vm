@@ -1,0 +1,44 @@
+function RNG.new 0
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 0
+push pointer 0
+return
+function RNG.random 0
+push argument 0
+pop pointer 0
+push this 0
+push constant 8121
+call Math.multiply 2
+push constant 11
+add
+pop this 0
+push this 0
+return
+function RNG.randInt 1
+push argument 0
+pop pointer 0
+push pointer 0
+call RNG.random 1
+call Math.abs 1
+pop local 0
+push argument 1
+push local 0
+add
+push argument 2
+push argument 1
+sub
+push constant 1
+add
+push local 0
+push argument 2
+push argument 1
+sub
+push constant 1
+add
+call Math.divide 2
+call Math.multiply 2
+sub
+return

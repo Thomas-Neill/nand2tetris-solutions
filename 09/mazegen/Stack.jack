@@ -1,0 +1,18 @@
+class Stack {
+  field Array internal;
+  field int size;
+  constructor Stack new(int sz_) {
+    let size = 0;
+    let internal = Array.new(sz_);
+    return this;
+  }
+  method int pop() {
+    let size = size - 1;
+    return internal[size];
+  }
+  method void push(int x) {
+    let internal[size] = x;
+    let size = size + 1;
+    return;
+  }
+}
